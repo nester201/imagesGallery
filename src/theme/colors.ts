@@ -10,4 +10,5 @@ export default {
   error: '#F31260',
   warning: '#ff5c76',
   background: '#f9fafb',
+  lightText: '#666666',
 };

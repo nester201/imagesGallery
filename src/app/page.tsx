@@ -1,13 +1,16 @@
 'use client';
-import styled from 'styled-components';
+import Auth from '@/components/Auth/Auth';
+import { useAppSession } from '@/hooks/useAppSession';
+import { redirect } from 'next/navigation';
 
-export default function Home() {
-  return <Title>Testxcvcxvxcv</Title>;
-}
+const AuthPage = () => {
+  const session = useAppSession();
 
-const Title = styled.div`
-  width: 300px;
-  height: 300px;
-  background-color: red;
-  color: black;
-`;
+  if (session) {
+    redirect('/gallery/1');
+  }
+
+  return <Auth />;
+};
+
+export default AuthPage;
